@@ -24,6 +24,7 @@ public class AmalbekMirasAuthService {
     private final AmalbekMirasJwtUtil jwtUtil;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
+    private final AmalbekMirasEmailNotificationService emailService;
 
     public AmalbekMirasAuthResponse register(AmalbekMirasRegisterRequest request) {
         // check if exists
@@ -52,6 +53,9 @@ public class AmalbekMirasAuthService {
 
         userRepository.save(user);
         log.info("registered new user: {}", user.getUsername());
+
+        // send welcome email async
+        emailService.sendWelcomeEmail(user.getEmail(), user.getUsername());
 
         String token = jwtUtil.generateToken(user);
         return new AmalbekMirasAuthResponse(token, user.getUsername(), user.getRole().name());
