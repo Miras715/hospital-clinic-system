@@ -20,7 +20,7 @@ public interface AmalbekMirasAppointmentMapper {
     @Mapping(source = "doctor.id", target = "doctorId")
     @Mapping(target = "patientName", expression = "java(appointment.getPatient().getFirstName() + \" \" + appointment.getPatient().getLastName())")
     @Mapping(target = "doctorName", expression = "java(appointment.getDoctor().getFirstName() + \" \" + appointment.getDoctor().getLastName())")
-    @Mapping(source = "status", target = "status")
+    @Mapping(target = "status", expression = "java(appointment.getStatus().name())")
     AmalbekMirasAppointmentResponse toResponse(AmalbekMirasAppointment appointment);
 
     @Mapping(target = "patient", ignore = true)
