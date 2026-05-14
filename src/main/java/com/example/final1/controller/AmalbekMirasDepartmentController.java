@@ -4,6 +4,7 @@ import com.example.final1.dto.request.AmalbekMirasDepartmentRequest;
 import com.example.final1.dto.response.AmalbekMirasDepartmentResponse;
 import com.example.final1.service.AmalbekMirasDepartmentService;
 import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@SecurityRequirement(name = "bearerAuth")
 @RestController
 @RequestMapping("/api/departments")
 @RequiredArgsConstructor

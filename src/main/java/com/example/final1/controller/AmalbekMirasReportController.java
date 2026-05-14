@@ -1,6 +1,7 @@
 package com.example.final1.controller;
 
 import com.example.final1.service.AmalbekMirasReportService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
+@SecurityRequirement(name = "bearerAuth")
 @RestController
 @RequestMapping("/api/reports")
 @RequiredArgsConstructor

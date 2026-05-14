@@ -4,6 +4,7 @@ import com.example.final1.dto.request.AmalbekMirasPatientRequest;
 import com.example.final1.dto.response.AmalbekMirasPatientResponse;
 import com.example.final1.service.AmalbekMirasPatientService;
 import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+@SecurityRequirement(name = "bearerAuth")
 @RestController
 @RequestMapping("/api/patients")
 @RequiredArgsConstructor

@@ -4,6 +4,7 @@ import com.example.final1.dto.request.AmalbekMirasAppointmentRequest;
 import com.example.final1.dto.response.AmalbekMirasAppointmentResponse;
 import com.example.final1.service.AmalbekMirasAppointmentService;
 import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
+@SecurityRequirement(name = "bearerAuth")
 @RestController
 @RequestMapping("/api/appointments")
 @RequiredArgsConstructor

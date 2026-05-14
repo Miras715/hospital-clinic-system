@@ -2,6 +2,7 @@ package com.example.final1.controller;
 
 import com.example.final1.service.AmalbekMirasFileService;
 import com.example.final1.service.AmalbekMirasMedicalRecordService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.Map;
 
 @Slf4j
+@SecurityRequirement(name = "bearerAuth")
 @RestController
 @RequestMapping("/api/files")
 @RequiredArgsConstructor
