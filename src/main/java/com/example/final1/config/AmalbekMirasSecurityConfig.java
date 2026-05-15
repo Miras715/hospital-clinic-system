@@ -35,6 +35,7 @@ public class AmalbekMirasSecurityConfig {
             "/swagger-ui.html",
             "/api-docs/**",
             "/v3/api-docs/**",
+            "/webjars/**",
             "/actuator/**"
     };
 
